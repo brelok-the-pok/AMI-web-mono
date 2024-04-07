@@ -10,7 +10,7 @@ class UploadSerializer(serializers.Serializer):
 
 
 def get_file_path(filename):
-    return f"data/{filename}"
+    return f"/app/data/{filename}"
 
 
 def save_file_to_disk(file, filename):
@@ -35,4 +35,5 @@ class DataLoadViewSet(GenericViewSet):
     @action(methods=["POST"], detail=False, url_path="load-mono")
     def load_mono(self, request: Request) -> Response:
         save_file_to_disk(request.FILES['file'], "mono")
-        return Response("Файл сохранён")
+        import os
+        return Response(f"Файл сохранён, {os.getcwd()}, {get_file_path('mono')}")

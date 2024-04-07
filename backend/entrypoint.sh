@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python manage.py runserver 8000
+gunicorn backend.wsgi:application --bind 0.0.0.0:8000

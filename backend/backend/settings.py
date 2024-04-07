@@ -14,8 +14,8 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = f"{BASE_DIR}\\data"
-PLOTS_DIR = f"{DATA_DIR}\\plots"
+DATA_DIR = f"/app/data"
+PLOTS_DIR = f"/app/data/plots"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/

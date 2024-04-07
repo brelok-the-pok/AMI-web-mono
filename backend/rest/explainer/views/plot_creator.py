@@ -29,7 +29,7 @@ class PlotCreatorViewSet(ViewSet):
 
         pickle_service = PickleService()
 
-        path = settings.DATA_DIR + "\\mono"
+        path = settings.DATA_DIR + "/mono"
         mono = pickle_service.get_dataset_and_model(path)
         plot_creator = PlotCreator(
             mono.model,

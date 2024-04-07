@@ -6,8 +6,13 @@ class PickleReader:
     @staticmethod
     def read_pickled(path: str) -> Any:
         try:
-            file = pickle.load(open(path, "rb"))
+            file = pickle.load(open(f"{path}", "rb"))
         except Exception:
-            raise Exception("Объект по указаному пути не найден")
+            print('posis')
+            import os
+            cwd = os.path.abspath(os.getcwd())
+            print('posis')
+
+            raise Exception("Объект по указаному пути не найден", path)
 
         return file
